@@ -1,0 +1,665 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffafc;
+    color: #24141d;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    height: 75px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: white;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #b12b68;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #24141d;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #b12b68;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px 10%;
+
+    background:
+        linear-gradient(
+            rgba(255,240,247,0.92),
+            rgba(255,250,252,0.95)
+        );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title {
+    color: #b12b68;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 80px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #b12b68;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #6b5961;
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+
+    background: #b12b68;
+    color: white;
+
+    padding: 16px 28px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    box-shadow: 0 10px 25px rgba(177,43,104,0.25);
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title p {
+    color: #b12b68;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.section-title span {
+    color: #75636b;
+}
+
+
+/* =========================
+   TRY ON
+========================= */
+
+.tryon-section {
+    padding: 100px 8%;
+}
+
+.tryon-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 50px;
+
+    max-width: 1150px;
+    margin: auto;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 50px rgba(70,20,40,0.08);
+}
+
+.controls h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.controls h3:first-child {
+    margin-top: 0;
+}
+
+
+/* =========================
+   UPLOAD
+========================= */
+
+.upload-box {
+    border: 2px dashed #d99ab7;
+
+    min-height: 130px;
+
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    text-align: center;
+}
+
+.upload-box:hover {
+    background: #fff4f8;
+}
+
+.upload-box input {
+    display: none;
+}
+
+.upload-box span {
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.upload-box strong {
+    font-size: 15px;
+}
+
+.upload-box small {
+    color: #888;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   WIG BUTTONS
+========================= */
+
+.wig-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.wig-button {
+    padding: 12px;
+
+    border: 1px solid #e3c4d1;
+
+    background: white;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.wig-button:hover,
+.wig-button.active {
+    background: #b12b68;
+    color: white;
+    border-color: #b12b68;
+}
+
+
+/* =========================
+   SLIDERS
+========================= */
+
+.controls label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-top: 18px;
+
+    margin-bottom: 8px;
+}
+
+.controls input[type="range"] {
+    width: 100%;
+
+    accent-color: #b12b68;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.action-buttons button {
+    flex: 1;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.reset-button {
+    background: white;
+
+    border: 1px solid #ccc;
+}
+
+.shop-button {
+    background: #b12b68;
+
+    border: none;
+
+    color: white;
+}
+
+.shop-button:hover {
+    background: #8d1e50;
+}
+
+
+/* =========================
+   VIRTUAL MIRROR
+========================= */
+
+.mirror {
+    position: relative;
+
+    min-height: 650px;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4dce8,
+            #ead0dd
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow:
+        0 20px 60px rgba(50,20,35,0.15);
+}
+
+.placeholder {
+    text-align: center;
+
+    color: #755d68;
+
+    padding: 30px;
+}
+
+.camera-icon {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.placeholder h3 {
+    margin-bottom: 10px;
+}
+
+.placeholder p {
+    font-size: 14px;
+}
+
+
+/* =========================
+   USER PHOTO
+========================= */
+
+.user-photo {
+    position: absolute;
+
+    max-width: 85%;
+    max-height: 90%;
+
+    object-fit: contain;
+
+    display: none;
+
+    border-radius: 15px;
+}
+
+
+/* =========================
+   WIG OVERLAY
+========================= */
+
+.wig-overlay {
+    position: absolute;
+
+    width: 60%;
+
+    max-width: 500px;
+
+    display: none;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    transform:
+        translate(
+            0px,
+            -20px
+        );
+}
+
+
+/* =========================
+   MIRROR LABEL
+========================= */
+
+.mirror-label {
+    position: absolute;
+
+    bottom: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(255,255,255,0.85);
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    z-index: 10;
+}
+
+
+/* =========================
+   COLLECTION
+========================= */
+
+.collection {
+    padding: 100px 8%;
+
+    background: white;
+}
+
+.wig-cards {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.wig-card {
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: #fff8fb;
+
+    border: 0;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    text-align: center;
+}
+
+.wig-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(70,20,40,0.1);
+}
+
+.wig-picture {
+    height: 220px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 65px;
+
+    margin-bottom: 18px;
+}
+
+.wig-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.straight-picture {
+    background: #f5e2ea;
+}
+
+.curly-picture {
+    background: #ecd6e0;
+}
+
+.bob-picture {
+    background: #f0dce5;
+}
+
+.wave-picture {
+    background: #e8d0dc;
+}
+
+.wig-card h3 {
+    margin-bottom: 8px;
+}
+
+.wig-card p {
+    color: #806c75;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 100px 15%;
+
+    text-align: center;
+
+    background: #fff3f8;
+}
+
+.about h2 {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.8;
+
+    color: #6d5962;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #24141d;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+footer .logo {
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #d8c6cd;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    nav {
+        display: none;
+    }
+
+    .tryon-container {
+        grid-template-columns: 1fr;
+    }
+
+    .wig-cards {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .mirror {
+        min-height: 550px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .hero {
+        padding: 60px 25px;
+    }
+
+    .tryon-section,
+    .collection {
+        padding: 70px 20px;
+    }
+
+    .wig-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        padding: 22px;
+    }
+
+}

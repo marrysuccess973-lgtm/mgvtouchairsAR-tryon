@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MGV Touch | AI Wig Try-On</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <span>MGV</span> TOUCH
+        </div>
+
+        <nav>
+            <a href="#tryon">Try-On</a>
+            <a href="#wigs">Wigs</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">SMART BEAUTY TECHNOLOGY</p>
+
+            <h1>
+                Find the Wig That
+                <span>Fits You.</span>
+            </h1>
+
+            <p>
+                Upload your photo and virtually try different wig styles
+                before making your purchase.
+            </p>
+
+            <a href="#tryon" class="hero-button">
+                Try a Wig Now ✨
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRY ON SECTION -->
+    <section id="tryon" class="tryon-section">
+
+        <div class="section-title">
+
+            <p>VIRTUAL WIG STUDIO</p>
+
+            <h2>Try Your Wig</h2>
+
+            <span>
+                Upload a photo and choose a style below.
+            </span>
+
+        </div>
+
+
+        <div class="tryon-container">
+
+            <!-- CONTROL PANEL -->
+            <div class="controls">
+
+                <h3>1. Upload Your Photo</h3>
+
+                <label class="upload-box">
+
+                    <input
+                        type="file"
+                        id="photoInput"
+                        accept="image/*"
+                    >
+
+                    <span>📸</span>
+
+                    <strong>
+                        Upload Photo
+                    </strong>
+
+                    <small>
+                        JPG or PNG
+                    </small>
+
+                </label>
+
+
+                <h3>2. Choose a Wig</h3>
+
+                <div class="wig-options">
+
+                    <button
+                        class="wig-button active"
+                        data-wig="straight"
+                    >
+                        Straight
+                    </button>
+
+                    <button
+                        class="wig-button"
+                        data-wig="curly"
+                    >
+                        Curly
+                    </button>
+
+                    <button
+                        class="wig-button"
+                        data-wig="bob"
+                    >
+                        Bob
+                    </button>
+
+                    <button
+                        class="wig-button"
+                        data-wig="wave"
+                    >
+                        Wavy
+                    </button>
+
+
+                </div>
+
+
+                <h3>3. Adjust Wig</h3>
+
+                <label>
+                    Wig Size
+                </label>
+
+                <input
+                    type="range"
+                    id="wigSize"
+                    min="40"
+                    max="140"
+                    value="90"
+                >
+
+
+                <label>
+                    Move Left / Right
+                </label>
+
+                <input
+                    type="range"
+                    id="wigX"
+                    min="-150"
+                    max="150"
+                    value="0"
+                >
+
+
+                <label>
+                    Move Up / Down
+                </label>
+
+                <input
+                    type="range"
+                    id="wigY"
+                    min="-150"
+                    max="150"
+                    value="-20"
+                >
+
+
+                <div class="action-buttons">
+
+                    <button
+                        id="resetButton"
+                        class="reset-button"
+                    >
+                        Reset
+                    </button>
+
+                    <button
+                        id="shopButton"
+                        class="shop-button"
+                    >
+                        Shop This Wig 🛍️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIRTUAL MIRROR -->
+            <div class="mirror">
+
+                <div
+                    id="placeholder"
+                    class="placeholder"
+                >
+
+                    <div class="camera-icon">
+                        📷
+                    </div>
+
+                    <h3>
+                        Your Virtual Mirror
+                    </h3>
+
+                    <p>
+                        Upload a photo to begin your wig try-on.
+                    </p>
+
+                </div>
+
+
+                <img
+                    id="userPhoto"
+                    class="user-photo"
+                    alt="Your uploaded photo"
+                >
+
+
+                <img
+                    id="wigOverlay"
+                    class="wig-overlay"
+                    alt="Virtual wig"
+                >
+
+
+                <div class="mirror-label">
+                    MGV TOUCH • VIRTUAL TRY-ON
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WIG COLLECTION -->
+    <section id="wigs" class="collection">
+
+        <div class="section-title">
+
+            <p>OUR COLLECTION</p>
+
+            <h2>Explore Wig Styles</h2>
+
+        </div>
+
+
+        <div class="wig-cards">
+
+            <button class="wig-card" type="button" data-wig="straight">
+
+                <div class="wig-picture straight-picture">
+                    <img src="assets/wigs/straight.svg" alt="Bone straight wig preview">
+                </div>
+
+                <h3>Bone Straight</h3>
+
+                <p>
+                    Sleek and elegant
+                </p>
+
+            </button>
+
+
+            <button class="wig-card" type="button" data-wig="curly">
+
+                <div class="wig-picture curly-picture">
+                    <img src="assets/wigs/curly.svg" alt="Curly glam wig preview">
+                </div>
+
+                <h3>Curly Glam</h3>
+
+                <p>
+                    Full and playful
+                </p>
+
+            </button>
+
+
+            <button class="wig-card" type="button" data-wig="bob">
+
+                <div class="wig-picture bob-picture">
+                    <img src="assets/wigs/bob.svg" alt="Classic bob wig preview">
+                </div>
+
+                <h3>Classic Bob</h3>
+
+                <p>
+                    Modern and stylish
+                </p>
+
+            </button>
+
+
+            <button class="wig-card" type="button" data-wig="wave">
+
+                <div class="wig-picture wave-picture">
+                    <img src="assets/wigs/wave.svg" alt="Luxury waves wig preview">
+                </div>
+
+                <h3>Luxury Waves</h3>
+
+                <p>
+                    Soft and glamorous
+                </p>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+
+        <h2>
+            Beauty Meets Technology
+        </h2>
+
+        <p>
+            MGV Touch is exploring smart beauty technology
+            to make online wig shopping easier. Our virtual
+            try-on experience helps customers explore different
+            hairstyles before purchasing.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">
+            <span>MGV</span> TOUCH
+        </div>
+
+        <p>
+            Empowering Confidence Through Style & Beauty
+        </p>
+
+        <small>
+            © 2026 MGV Touch Hair Wigs
+        </small>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
