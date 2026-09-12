@@ -1,16 +1,16 @@
-# MGV Touch AI Wig Try-On
+# React + Vite
 
-This is a browser-based wig try-on prototype. Upload a photo, choose a wig style, and adjust its size and position over the photo.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Try different wigs
+Currently, two official plugins are available:
 
-The four styles are controlled in `script.js` by the `wigs` object:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- `straight` -> `assets/wigs/straight.svg`
-- `curly` -> `assets/wigs/curly.svg`
-- `bob` -> `assets/wigs/bob.svg`
-- `wave` -> `assets/wigs/wave.svg`
+## React Compiler
 
-To add a real MGV Touch wig, place a transparent PNG or SVG in `assets/wigs/`, update the matching path in `script.js`, and keep the artwork transparent around the face. The buttons in the try-on panel and the cards in the collection use the same style keys, so both stay in sync.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Open `index.html` in a browser to try it. No build step is required.
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
