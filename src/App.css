@@ -641,6 +641,17 @@ footer small {
 }
 
 @media (max-width: 950px) {
+  .hero-section {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    padding-top: 4rem;
+  }
+
+  .hero-metrics {
+    max-width: none;
+  }
+
   .studio {
     grid-template-columns: 1fr;
   }
@@ -655,12 +666,69 @@ footer small {
 }
 
 @media (max-width: 560px) {
+  .topbar {
+    padding: 16px 1.1rem;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+  }
+
+  .cart-pill {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.65rem;
+  }
+
   .hero-section,
   .studio,
   .collection-section,
   .feature-section {
     padding-left: 1.1rem;
     padding-right: 1.1rem;
+  }
+
+  .hero-section {
+    padding-top: 3.25rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.7rem, 14vw, 4.1rem);
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero-actions,
+  .hero-actions .primary-cta {
+    width: 100%;
+  }
+
+  .hero-actions .primary-cta {
+    text-align: center;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .metric-card {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    text-align: left;
+  }
+
+  .metric-card strong {
+    margin-bottom: 0;
+  }
+
+  .panel {
+    padding: 1.1rem;
+    border-radius: 22px;
   }
 
   .card-grid {
@@ -672,6 +740,26 @@ footer small {
   }
 
   .mirror-stage {
-    min-height: 560px;
+    min-height: 0;
+    height: min(142vw, 600px);
+    border-radius: 24px;
+  }
+
+  .mirror-label {
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+    text-align: center;
+    font-size: 0.58rem;
+  }
+
+  .camera-toggle {
+    right: 1rem;
+    bottom: 3.6rem;
+    font-size: 0.78rem;
+  }
+
+  .wig-overlay {
+    max-width: 92%;
   }
 }
