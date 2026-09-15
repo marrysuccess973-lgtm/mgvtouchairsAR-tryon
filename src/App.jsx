@@ -130,6 +130,28 @@ function App() {
   }, [])
 
   useEffect(() => {
+    if (!cameraActive || !videoRef.current || !streamRef.current) return
+
+    const video = videoRef.current
+    video.srcObject = streamRef.current
+
+    const startPlayback = async () => {
+      try {
+        await video.play()
+      } catch {
+        setCameraError('The camera is connected but playback was blocked. Tap Start Live Mirror again.')
+      }
+    }
+
+    startPlayback()
+
+    return () => {
+      video.pause()
+      video.srcObject = null
+    }
+  }, [cameraActive])
+
+  useEffect(() => {
     const scriptId = 'face-api-script'
     const existing = document.getElementById(scriptId)
 
@@ -219,10 +241,14 @@ function App() {
       setCameraError('')
       const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false })
       streamRef.current = stream
-      if (videoRef.current) videoRef.current.srcObject = stream
       setCameraActive(true)
-    } catch {
-      setCameraError('Camera access was blocked. Allow camera permission and try again.')
+    } catch (error) {
+      const message = error?.name === 'NotAllowedError'
+        ? 'Camera access was blocked. Allow camera permission in your browser, then try again.'
+        : error?.name === 'NotFoundError'
+          ? 'No camera was found. Connect a camera and try again.'
+          : 'The camera could not start. Check browser permissions and try again.'
+      setCameraError(message)
     }
   }
 
